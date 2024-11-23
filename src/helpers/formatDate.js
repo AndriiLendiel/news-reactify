@@ -3,9 +3,15 @@ export const formatDate = (date) => {
         weekday: 'long',
         year: 'numeric',
         month: 'long',
-        dat: 'numeric'
+        day: 'numeric'
 }
 
 
     return date.toLocaleDateString('en-US', options)
 }
+
+
+
+
+
+
