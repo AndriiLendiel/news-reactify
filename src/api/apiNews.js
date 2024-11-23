@@ -5,8 +5,7 @@ import axios from 'axios'
 // const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 const BASE_URL = 'https://api.currentsapi.services/v1/'
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
-console.log(import.meta);
-console.log();
+
 
 export const getNews = async () => {
     try {
