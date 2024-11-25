@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from './styles.module.css'
+import s from './styles.module.css'
 export const Image = ({image}) => {
   return (
-      <div className={styles.wrapper}>
-          {image ? <img src={image} alt='news' className={styles.image} /> : null}
+      <div className={s.wrapper}>
+          {image ? <img src={image} alt='news' className={s.image} /> : null}
     </div>
   )
 }

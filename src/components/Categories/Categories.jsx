@@ -1,5 +1,4 @@
 import React from "react"
-import { formatDate } from "../../helpers/formatDate"
 import s from './styles.module.css'
 
 const Categories = ({ categories, setSelectedCategory, selectedCategory}) => {

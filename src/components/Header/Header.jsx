@@ -1,12 +1,12 @@
 import React from "react"
 import { formatDate } from "../../helpers/formatDate"
-import styles from './styles.module.css'
+import s from './styles.module.css'
 
 const Header = () => {
   return (
-      <header className={styles.header}>
-          <h1 className={styles.title}>NEWS REACTIFY</h1>
-          <p className={styles.date}>{formatDate(new Date())}</p>
+      <header className={s.header}>
+          <h1 className={s.title}>NEWS REACTIFY</h1>
+          <p className={s.date}>{formatDate(new Date())}</p>
     </header>
   )
 }

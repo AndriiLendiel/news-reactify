@@ -1,16 +1,16 @@
 import React from 'react'
-import styles from './styles.module.css'
+import s from './styles.module.css'
 import { formatTimeAgo } from '../../helpers/formatTimeAgo'
 export const NewsItem = ({item}) => {
   return (
-    <li className={styles.item}>
-      <div className={styles.wrapper}
+    <li className={s.item}>
+      <div className={s.wrapper}
       style={{ backgroundImage: `url(${item.image})`}}
       >
       </div>
-      <div className={styles.info}>
-          <h3 className={styles.title}>{item.title}</h3>
-        <p className={styles.extra}>{formatTimeAgo(item.published)}
+      <div className={s.info}>
+          <h3 className={s.title}>{item.title}</h3>
+        <p className={s.extra}>{formatTimeAgo(item.published)}
           by {item.author}</p>
       </div>
 
