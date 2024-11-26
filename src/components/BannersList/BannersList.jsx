@@ -1,7 +1,5 @@
 import React from "react"
 import s from './styles.module.css'
-import { formatTimeAgo } from "../../helpers/formatTimeAgo"
-import Image from '../Image/Image'
 import withSkeleton from "../../helpers/hocs/withSkeleton"
 import NewsBanner from "../NewsBanner/NewsBanner"
 const BannersList = ({ banners }) => {
