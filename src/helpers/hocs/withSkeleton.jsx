@@ -1,6 +1,6 @@
 import Skeleton from "../../components/Skeleton/Skeleton"
 
-function withSkeleton(Component, type, count) {
+function withSkeleton(Component, type, count,direction) {
     
 
     return function WithSkeketon(props) {
@@ -8,6 +8,7 @@ function withSkeleton(Component, type, count) {
         
         if (isLoading) {
             return <Skeleton type={type}
+                direction={direction}
                 count={count} />
         }
         return <Component {...restProps} />
