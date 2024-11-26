@@ -4,17 +4,22 @@ import s from './styles.module.css'
 import { getCategories } from "../../api/apiNews"
 import Categories from "../Categories/Categories"
 import Search from "../Search/Search"
-
+import Slider from "../Slider/Slider"
 const NewsFilters = ({filters, changeFilters}) => {
     const {data: dataCategories} = useFetch(getCategories)
   return (
       <div className={s.filters}>
-          {dataCategories ? (
+      {dataCategories ? (
+<Slider>
         <Categories
         categories={dataCategories.categories}
         setSelectedCategory={(category) => changeFilters('category',category)}
         selectedCategory={filters.category}
-      />) : null}
+        />
+</Slider>
+) : null}
+      
+
       <Search keywords={filters.keywords}
         setKeyWords={(keywords) => changeFilters('keywords',keywords)} />
       
