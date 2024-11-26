@@ -1,14 +1,17 @@
 import React from "react"
-import { formatDate } from "../../helpers/formatDate"
 import s from './styles.module.css'
 import BannersListrWithSkeleton from "../BannersList/BannersList"
+import { useFetch } from "../../helpers/hooks/useFetch"
+import { getLatestNews } from "../../api/apiNews"
 
 
 
-const LatestNews = ({banners,isLoading}) => {
+const LatestNews = () => {
+    const { data,  isLoading } = useFetch(getLatestNews)
   return (
     <section className={s.section}>
-      <BannersListrWithSkeleton banners={banners} isLoading={isLoading}  />
+      <BannersListrWithSkeleton banners={data && data.news}
+        isLoading={isLoading} />
 </section>
   )
 }
