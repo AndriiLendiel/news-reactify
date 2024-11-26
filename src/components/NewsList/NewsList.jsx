@@ -5,7 +5,7 @@ import withSkeleton from '../../helpers/hocs/withSkeleton'
 export const NewsList = ({news}) => {
   return (
       <ul className={s.list}>
-      {news.map(el => {
+      {news?.map(el => {
         return <NewsItem key={el.id}item={el}/>
 })}
     </ul>
