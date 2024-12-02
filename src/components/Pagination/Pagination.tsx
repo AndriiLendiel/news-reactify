@@ -1,12 +1,16 @@
 import React from "react"
 import s from './styles.module.css'
+import { IPaginationProps } from "../../interfaces"
+
+
+
 
 const Pagination = ({
   totalPages,
   handleNextPage,
   handlePrevPage,
   handlePageClick,
-  currentPage }) => {
+  currentPage }:IPaginationProps) => {
   return (
     <div className={s.pagination}>
       <button className={s.arrow}

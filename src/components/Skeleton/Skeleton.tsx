@@ -1,11 +1,22 @@
 import React from "react"
 import s from './styles.module.css'
+import { DirectionType, SkeletonType } from "../../interfaces"
 
-const Skeleton = ({count=1, type='banner'}) => {
+interface Props{
+    type?: SkeletonType,
+    count?: number,
+    direction?: DirectionType
+}
+
+const Skeleton = ({
+  count = 1,
+  type = 'banner',
+  direction = 'column' }:Props) => {
   return (
     <>
       {count > 1 ? (
-                <ul className={s.list}>
+        <ul className={direction === 'column' ?
+          s.columnList : s.rowList}>
           {[...Array(count)].map((_, index) => (
             <li key={index}
               className={type === 'banner' ? s.banner : s.item}>

@@ -1,8 +1,11 @@
-export const formatTimeAgo = (dateString) => {
+export const formatTimeAgo = (dateString: string | null) => {
+    
+    if (!dateString) {
+        return ''
+    }
     const now = new Date()
     const date = new Date(dateString)
     const secondPast = (now.getTime() - date.getTime()) / 1000;
-
 
     if (secondPast < 60) {
         return `${Math.floor(secondPast)}s ago`
