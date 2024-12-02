@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": " tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/css-modules": "^1.0.5",
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
     "react": "^18.3.1",
