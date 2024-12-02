@@ -3,7 +3,15 @@
   "references": [
     // { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json",
-  "compilerOptions": { "jsx": "preserve", "moduleResolution": "node", "target": "es6", "allowJs": true }, "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"], "exclude": ["node_modules"]
+  "compilerOptions": { 
+    "jsx": "preserve", 
+    "moduleResolution": "node", 
+    "target": "es5", 
+    "allowJs": true }, 
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"], 
+    "exclude": ["node_modules"],
+    "module": "commonjs",
+    "strict": true
   }
   ],
 
