@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-        "rootDir": "./src", // new
+    "rootDir": "./src", // new
     "outDir": "./dist", 
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
