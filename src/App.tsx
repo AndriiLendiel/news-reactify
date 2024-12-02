@@ -1,6 +1,5 @@
 
 import Header from "./components/Header/Header"
-import NewsBanner from "./components/NewsBanner/NewsBanner"
 import Main from "./pages/Main/Main"
 
 
@@ -12,7 +11,7 @@ function App() {
       <div className="container">
         <Main />
       </div>
-      <NewsBanner/>
+
 
     </>
   )
