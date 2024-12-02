@@ -2,7 +2,14 @@ import React from "react"
 import s from './styles.module.css'
 import { formatTimeAgo } from "../../helpers/formatTimeAgo"
 import Image from '../Image/Image'
-const NewsBanner = ({ item }) => {
+import { INews } from "../../interfaces"
+
+
+
+interface Props {
+  item: INews
+}
+const NewsBanner = ({ item }:Props) => {
 
   return (
     item? 

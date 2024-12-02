@@ -8,6 +8,7 @@ import { useFetch } from "../../helpers/hooks/useFetch"
 import { useFilters } from "../../helpers/hooks/useFilters"
 import { getNews } from "../../api/apiNews"
 import PaginationWrapper from "../PaginationWrapper/PaginationWrapper"
+import { NewsApiResponse, ParamsType } from "../../interfaces"
 
 
 const NewsByFilters = () => {
@@ -20,10 +21,10 @@ const NewsByFilters = () => {
   keywords: ''
   })
   
-  const debouncedKeywords = useDebounce(filters.keywords, 1500)
+  const debouncedKeywords = useDebounce(filters.keywords as string, 1500)
 
 
-  const { data,  isLoading } = useFetch(getNews, {
+  const { data,  isLoading } = useFetch<NewsApiResponse, ParamsType>(getNews, {
     ...filters,
     keywords: debouncedKeywords
 })
@@ -41,7 +42,7 @@ const NewsByFilters = () => {
     }
   }
   
-  const handlePageClick = (page_number) => {
+  const handlePageClick = (page_number: number) => {
     changeFilters('page_number',page_number)
   }
 
@@ -56,7 +57,7 @@ const NewsByFilters = () => {
         handleNextPage={handleNextPage}
         handlePrevPage={handlePrevPage}
         handlePageClick={handlePageClick}
-        currentPage={filters.currentPage}
+        currentPage={filters.page_number}
         totalPages={TOTAL_PAGES}>
 
         <NewsList isLoading={isLoading} news={data?.news} />
