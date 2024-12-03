@@ -6,20 +6,23 @@ import Categories from "../Categories/Categories"
 import Search from "../Search/Search"
 import Slider from "../Slider/Slider"
 import { CategoriesApiResponse, IFilters, INews } from "../../interfaces"
+import { useTheme } from "../../context/ThemeContext"
 
 
 
 interface Props {
   filters: IFilters,
-  changeFilters: (key:string, value:string | number | null) => void
+  changeFilters: (key: string, value: string | number | null) => void
+
 }
 
-const NewsFilters = ({filters, changeFilters}:Props) => {
+const NewsFilters = ({ filters, changeFilters }: Props) => {
+  const {isDark} = useTheme()
     const {data: dataCategories} = useFetch<CategoriesApiResponse, null>(getCategories)
   return (
       <div className={s.filters}>
       {dataCategories ? (
-<Slider>
+<Slider isDark={isDark}>
         <Categories
         categories={dataCategories.categories}
         setSelectedCategory={(category) => changeFilters('category',category)}
@@ -31,7 +34,6 @@ const NewsFilters = ({filters, changeFilters}:Props) => {
 
       <Search keywords={filters.keywords}
         setKeyWords={(keywords) => changeFilters('keywords',keywords)} />
-      
     </div>
   )
 }

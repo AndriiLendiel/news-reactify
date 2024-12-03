@@ -11,6 +11,7 @@ import PaginationWrapper from "../PaginationWrapper/PaginationWrapper"
 import { NewsApiResponse, ParamsType } from "../../interfaces"
 
 
+
 const NewsByFilters = () => {
 
   const {filters, changeFilters } = useFilters(
