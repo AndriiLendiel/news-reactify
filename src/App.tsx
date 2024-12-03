@@ -4,9 +4,6 @@ import Main from "./pages/Main/Main"
 import {useTheme } from "./context/ThemeContext"
 
 
-
-
-
 function App() {
 const {isDark, toggleTheme} = useTheme()
   return (
